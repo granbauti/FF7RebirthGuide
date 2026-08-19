@@ -11,9 +11,10 @@ tracks your 100% / platinum progress live while you play.
   (towers, fiend sightings, lifesprings, phenomenon/protorelic chains,
   divine intel, excavations, moogles), Queen's Blood, Chadley's VR
   challenges, minigames, Johnny's Seaside Inn collectibles and trophy cards.
-- **3D ESP markers** — an in-world marker guides you to the nearest
+- **3D world markers** — an in-world marker guides you to the nearest
   incomplete activity, with distance, action hints and quest-step tracking
-  that advances the moment the game registers your progress.
+  that advances the moment the game registers your progress. Smart
+  fast-travel suggestions when the target is far away.
 - **Dependency-aware guidance** — every activity knows what unlocks it.
   "Chase" any goal (a trophy card, a VR challenge, a quest) and the overlay
   walks its prerequisite chain down to the thing you can actually do right now.
@@ -50,7 +51,9 @@ are rejected on purpose.
 
 1. Start FINAL FANTASY VII REBIRTH (Borderless recommended).
 2. Run `FF7RebirthGuide.exe`. It finds the running game automatically —
-   you can also start the overlay first; it waits for the game.
+   you can also start the overlay first; it waits for the game. A
+   minimized console window appears in the taskbar (the overlay's log);
+   closing that window also quits the overlay.
 3. On first run a small wizard lets you pick a guide mode.
 4. Play.
 
@@ -58,16 +61,23 @@ are rejected on purpose.
 
 | Key | Action |
 |---|---|
-| **F7** | Toggle the 3D ESP markers |
-| **F8** | Toggle **mouse interaction** — enables the cursor so you can click, scroll and drag inside the overlay panels; press again to give control back to the game |
-| **F9** | Hide / show the overlay |
+| **F6** | Skip the current ESP target for this session (toggling the ESP off/on brings skipped targets back) |
+| **F7** | Toggle the 3D world markers |
+| **F8** | Toggle **mouse interaction** — enables the cursor for the overlay panels; also *pins* the panel visible over the game's own menus (an orange indicator shows when pinned). Press again to unpin and return to full click-through |
+| **F9** | Hide / show the guide panel (the 3D world marker is independent — toggle it with F7) |
 | **F10** | Switch between the compact widget and the expanded panel |
 | **End** | Quit the overlay |
 
-Tip: the overlay is click-through by default so it never steals your game
-input. Press **F8** whenever you want to use the menus (change settings,
-rebind keys, postpone items, press "chase" buttons), and **F8** again to
-return control to the game.
+Tips:
+- The overlay is click-through by default so it never steals your game
+  input. With **F8** on, only the panels themselves catch the mouse —
+  clicks anywhere else still go to the game (or any other application).
+- With F8 **off**, the overlay auto-hides whenever the game's menus, map,
+  loading screens or cutscenes are up, so it never covers the game's UI;
+  it comes back in gameplay. Turn F8 **on** if you want to keep the panel
+  visible over a game menu (e.g. to compare lists).
+- During combat the panel shrinks to a minimal combat widget and returns
+  to normal afterwards.
 
 ### Files it creates
 
@@ -101,9 +111,14 @@ certutil -hashfile FF7RebirthGuide.exe SHA256
   `FF7RebirthGuide.exe --target "D:\...\ff7rebirth_.exe"`
 - **"Unsupported build" error** — your game version differs from Steam
   build 23447986 (PC 1.005). The overlay refuses to guess on unknown
-  builds; wait for a release that supports your version.
-- **Overlay not visible in-game** — switch the game to Borderless display
-  mode.
+  builds; wait for a release that supports your version. You can check
+  your install without attaching:
+  `FF7RebirthGuide.exe --verify-target --target "<path>\ff7rebirth_.exe"`
+- **Overlay disappeared while in a menu/cutscene** — that is intentional:
+  it auto-hides so it never covers the game's UI, and returns in gameplay.
+  Press **F8** if you want to pin it visible over a game menu.
+- **Overlay never visible at all** — switch the game to Borderless display
+  mode (exclusive Fullscreen can block it).
 
 ## Fair play note
 

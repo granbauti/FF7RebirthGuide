@@ -10,8 +10,8 @@ Supported game build: Steam 23447986 (PC 1.005).
   waypoints), treasure, World Intel including phenomenon/protorelic chains,
   Queen's Blood, Chadley's VR challenges, minigames and their stage/course
   progressions, Johnny collectibles and trophy cards.
-- 3D ESP markers with distance, action hints and automatic advance as the
-  game registers progress.
+- 3D world markers with distance, action hints and automatic advance as
+  the game registers progress.
 - Goal pursuit ("chase"): pick any target and the overlay walks its unlock
   chain to whatever you can act on right now, telling you when a goal is
   blocked and by what.

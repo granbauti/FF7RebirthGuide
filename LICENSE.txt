@@ -1,0 +1,25 @@
+FF7 Rebirth Completion Guide Overlay - Binary Freeware License
+
+Copyright (c) 2026 the FF7RebirthGuide author. All rights reserved.
+
+Permission is granted, free of charge, to any person obtaining a copy of
+this software in binary form, to use it for personal, non-commercial
+purposes.
+
+Restrictions:
+ 1. Redistribution of the binary is permitted only with a link back to the
+    official release page, unmodified and free of charge.
+ 2. The software may not be sold, bundled with paid products, or presented
+    as your own work.
+
+Disclaimers:
+ - THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES
+   OR OTHER LIABILITY ARISING FROM THE USE OF THE SOFTWARE.
+ - FINAL FANTASY, FINAL FANTASY VII REBIRTH and all related marks are
+   trademarks or registered trademarks of Square Enix Holdings Co., Ltd.
+   This software is an independent fan-made tool and is not affiliated
+   with, endorsed by, or sponsored by Square Enix.
+ - The software reads the state of your own running game session to display
+   your own progress. It performs no memory writes, no code injection and
+   no file modification. Use at your own discretion.

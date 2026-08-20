@@ -1,50 +1,75 @@
 # FF7 Rebirth Completion Guide Overlay
 
-A **read-only** companion overlay for FINAL FANTASY VII REBIRTH (PC, Steam) that
-tracks your 100% / platinum progress live while you play.
+Chasing 100% in FF7 Rebirth means alt-tabbing to checklists every ten
+minutes. This little overlay fixes that: it watches your own game, ticks
+things off **live** as you complete them, and points a marker at whatever
+is closest that you still haven't done. It only ever *reads* — it can't
+touch your game, your saves, or the internet.
 
 ![status](https://img.shields.io/badge/game%20build-Steam%2023447986%20(PC%201.005)-blue)
 
-![The overlay tracking completion in-game, with a world marker on the next target](media/01-panel-completo-settings-esp.jpg)
+## Download
 
-*Pursuing a goal: the overlay found the prerequisite that is actually doable right
-now and pointed the marker at it.*
+**[Latest release](https://github.com/granbauti/FF7RebirthGuide/releases/latest)** — grab the `.zip`, then:
 
-![Chasing a locked challenge down to its actionable prerequisite](media/02-chase-cadena-fiend-intel.jpg)
+1. Extract it to a normal folder (not inside the zip).
+2. Set the game to **Borderless** (Settings > Graphics > Display Mode).
+3. Start the game, run `FF7RebirthGuide.exe`.
+4. If SmartScreen warns: "More info" > "Run anyway" — and see
+   [TRUST.md](TRUST.md) for how to verify the download yourself.
 
-*The checklist, showing each requirement of a locked challenge as its own tickable
-line.*
+![The compact widget guiding straight to a collectible: 9 m to the photo op, with the hint of what to do there](media/01-marker-guiding-collectible.jpg)
 
-![Checklist view with per-requirement progress](media/03-checklist-platino-requisitos.png)
+*This collectible is easy to walk right past — the guide points at the exact
+NPC, tells you what to do, and ticks it off the moment the game registers it.*
+
+![The checklist on the Current view: search box, one-click completion audit, per-category progress](media/02-checklist-current-search.jpg)
+
+*The checklist opens on what you can actually do here and now. Search anything,
+or hit "Completion audit" for the full game-wide list of what's left.*
+
+![The one-time welcome window](media/03-welcome-wizard.png)
+
+*First run: pick what you're chasing and play. The overlay teaches its keys as
+you go.*
 
 ## What it does
 
-- **Live completion tracking** — quests, treasure chests, World Intel
-  (towers, fiend sightings, lifesprings, phenomenon/protorelic chains,
-  divine intel, excavations, moogles), Queen's Blood, Chadley's VR
-  challenges, minigames, Johnny's Seaside Inn collectibles and trophy cards.
-- **3D world markers** — an in-world marker guides you to the nearest
-  incomplete activity, with distance, action hints and quest-step tracking
-  that advances the moment the game registers your progress. Smart
-  fast-travel suggestions when the target is far away.
-- **Dependency-aware guidance** — every activity knows what unlocks it.
-  "Chase" any goal (a trophy card, a VR challenge, a quest) and the overlay
-  walks its prerequisite chain down to the thing you can actually do right now.
-- **Anti-spoiler mode** (on by default) — future region and chapter names
-  stay hidden until you reach them.
-- **Guide modes** — Completionist, Essentials and Platinum presets, chosen
-  in a first-run welcome wizard.
+- **Tracks everything, live** — quests, chests, all the World Intel
+  (towers, fiend sightings, lifesprings, protorelics, moogles...),
+  Queen's Blood, Chadley's VR challenges, minigames, Johnny's collectibles
+  and the trophy cards. The moment the game registers your progress, the
+  overlay ticks it off. 1,098 things in total.
+- **Points the way** — a marker in the world shows the nearest thing you
+  haven't done, with the distance and a short hint of what to do there.
+  If fast travel would save you a long walk, it says so. Things you can do
+  at several places (Chadley's simulator, the pianos) point to the closest
+  one.
+- **Knows what unlocks what** — pick any goal, hit "chase", and it walks
+  the requirements back to the thing you can actually do *right now*. If
+  something is story-locked it tells you the chapter instead of sending you
+  somewhere useless.
+- **Find anything** — a search box filters all 1,098 items as you type,
+  and a one-click "Completion audit" lists everything you're still missing,
+  ready to copy as text.
+- **No spoilers** — names of regions you haven't reached stay hidden until
+  you get there (on by default, can be turned off).
 
-## How it works (and what it never does)
+## What it never does
 
-The overlay attaches to the running game with **query and read-only memory
-rights**. It never writes to game memory, never injects code or DLLs, never
-modifies game files or saves, and never touches the network. If the game
-build does not exactly match the supported fingerprint, the overlay refuses
-to attach (fail-closed) rather than guess.
+It opens the game with read-only access — the same way a debugger *looks*
+at a program without touching it. That's the whole trick, and it means:
 
-Supported build: **Steam build 23447986 (PC version 1.005)**. Other builds
-are rejected on purpose.
+- No writes to the game's memory. Ever. It physically can't cheat for you.
+- No injected code, no DLLs, no mods — nothing runs inside the game.
+- No changes to game files or saves.
+- No internet. The overlay makes zero network connections (the "check for
+  updates" button just opens this page in your browser).
+
+If your game version doesn't exactly match the supported one, the overlay
+refuses to start rather than risk showing you wrong information.
+
+Supported version: **Steam build 23447986 (PC 1.005)**.
 
 ## Compatibility
 
@@ -73,23 +98,22 @@ are rejected on purpose.
 
 | Key | Action |
 |---|---|
-| **F6** | Skip the current ESP target for this session (toggling the ESP off/on brings skipped targets back) |
-| **F7** | Toggle the 3D world markers |
-| **F8** | Toggle **mouse interaction** — enables the cursor for the overlay panels; also *pins* the panel visible over the game's own menus (an orange indicator shows when pinned). Press again to unpin and return to full click-through |
-| **F9** | Hide / show the guide panel (the 3D world marker is independent — toggle it with F7) |
-| **F10** | Switch between the compact widget and the expanded panel |
-| **End** | Quit the overlay |
+| **F6** | Skip the currently marked target (turn the marker off and on to bring skipped ones back) |
+| **F7** | Turn the 3D world marker on/off |
+| **F8** | Let the mouse click the panel (it's click-through otherwise). Also keeps the panel visible over the game's own menus — an orange note shows when it's doing that. Press again to go back to click-through |
+| **F9** | Hide / show the panel |
+| **F10** | Compact widget ↔ full panel |
+| **End** | Quit |
 
-Tips:
-- The overlay is click-through by default so it never steals your game
-  input. With **F8** on, only the panels themselves catch the mouse —
-  clicks anywhere else still go to the game (or any other application).
-- With F8 **off**, the overlay auto-hides whenever the game's menus, map,
-  loading screens or cutscenes are up, so it never covers the game's UI;
-  it comes back in gameplay. Turn F8 **on** if you want to keep the panel
-  visible over a game menu (e.g. to compare lists).
-- During combat the panel shrinks to a minimal combat widget and returns
-  to normal afterwards.
+Good to know:
+- The overlay never steals your game input. Even with F8 on, only the
+  panel itself catches the mouse — clicks anywhere else go to the game.
+- The panel gets out of the way on its own: it hides during the game's
+  menus, map, loading screens and cutscenes, and comes back in gameplay.
+  Want it visible over a game menu (say, to compare lists)? Press F8.
+- In combat it shrinks to a tiny widget and grows back afterwards.
+- Don't worry about memorizing keys — the overlay shows a short tip the
+  first time each one matters.
 
 ### Files it creates
 
@@ -109,10 +133,13 @@ a VirusTotal report link, in its release notes.
 certutil -hashfile FF7RebirthGuide.exe SHA256
 ```
 
-Expect one or two machine-learning heuristics to flag it on VirusTotal: an
-unsigned executable that reads another process's memory is exactly the shape
-those engines guess at. Every major engine (Microsoft Defender, Kaspersky,
-ESET, Bitdefender, Avast, Malwarebytes) reports it clean.
+A handful of antivirus engines on VirusTotal will flag it — always the
+automated "AI guess" kind, never the major engines' real detections. That's
+the expected fate of a small unsigned program that reads another program's
+memory: it *looks* suspicious to a statistical model, even though what it
+does is completely visible (see [TRUST.md](TRUST.md) to check every claim
+yourself). Every release is also submitted to Microsoft's false-positive
+review before it's announced.
 
 ## Troubleshooting
 
@@ -127,11 +154,11 @@ ESET, Bitdefender, Avast, Malwarebytes) reports it clean.
   as administrator, run the overlay as administrator too. A custom install
   location can always be passed explicitly:
   `FF7RebirthGuide.exe --target "D:\...\ff7rebirth_.exe"`
-- **"Unsupported build" error** — your game version differs from Steam
-  build 23447986 (PC 1.005). The overlay refuses to guess on unknown
-  builds; wait for a release that supports your version. You can check
-  your install without attaching:
-  `FF7RebirthGuide.exe --verify-target --target "<path>\ff7rebirth_.exe"`
+- **"Unsupported build" error** — the game updated (or differs from Steam
+  build 23447986). The overlay refuses to guess on versions it hasn't been
+  verified against — wrong information is worse than none. A matching
+  release ships after each game patch: the error message links straight to
+  the [releases page](https://github.com/granbauti/FF7RebirthGuide/releases).
 - **Overlay disappeared while in a menu/cutscene** — that is intentional:
   it auto-hides so it never covers the game's UI, and returns in gameplay.
   Press **F8** if you want to pin it visible over a game menu.

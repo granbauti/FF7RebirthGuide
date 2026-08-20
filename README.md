@@ -5,6 +5,18 @@ tracks your 100% / platinum progress live while you play.
 
 ![status](https://img.shields.io/badge/game%20build-Steam%2023447986%20(PC%201.005)-blue)
 
+![The overlay tracking completion in-game, with a world marker on the next target](media/01-panel-completo-settings-esp.jpg)
+
+*Pursuing a goal: the overlay found the prerequisite that is actually doable right
+now and pointed the marker at it.*
+
+![Chasing a locked challenge down to its actionable prerequisite](media/02-chase-cadena-fiend-intel.jpg)
+
+*The checklist, showing each requirement of a locked challenge as its own tickable
+line.*
+
+![Checklist view with per-requirement progress](media/03-checklist-platino-requisitos.png)
+
 ## What it does
 
 - **Live completion tracking** — quests, treasure chests, World Intel
@@ -90,11 +102,17 @@ anywhere else.
 
 ## Verify your download
 
-Each release publishes the SHA-256 of the executable in its release notes.
+Every release publishes the SHA-256 of both the zip and the executable, plus
+a VirusTotal report link, in its release notes.
 
 ```
 certutil -hashfile FF7RebirthGuide.exe SHA256
 ```
+
+Expect one or two machine-learning heuristics to flag it on VirusTotal: an
+unsigned executable that reads another process's memory is exactly the shape
+those engines guess at. Every major engine (Microsoft Defender, Kaspersky,
+ESET, Bitdefender, Avast, Malwarebytes) reports it clean.
 
 ## Troubleshooting
 

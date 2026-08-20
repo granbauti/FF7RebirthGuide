@@ -6,3 +6,6 @@
 !README.md
 !LICENSE.txt
 !CHANGELOG.md
+!media/
+!media/*.png
+!media/*.jpg
